@@ -155,9 +155,9 @@ muzikale output moet reproduceerbaar zijn.
 
 ⸻
 
-🖼️ Screenshots & demo-GIFs (script)
+# 🖼️ Screenshots & demo-GIFs (script)
 
-Screenshot 1 – CLI output
+## Screenshot 1 – CLI output
 
 Command:
 '''bash
@@ -171,7 +171,7 @@ Laat zien:
 
 ⸻
 
-Screenshot 2 – JSON output
+## Screenshot 2 – JSON output
 
 ```bash
 python chordgeefniet.py --key C --scale minor --bars 8 --seed 123 --json
@@ -180,6 +180,9 @@ python chordgeefniet.py --key C --scale minor --bars 8 --seed 123 --json
 Laat zien:
     •	JSON contract
     •	geschikt voor web/frontend gebruik
+
+## Screenshot 3 – Midi imported in een DAW
+<img src="./img/midi_traack_in_DAW_LogicPro.jpg">
 
 ⸻
 
