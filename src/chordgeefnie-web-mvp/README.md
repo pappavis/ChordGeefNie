@@ -10,6 +10,8 @@ npm install
 npm run dev
 ```
 
+<img src="../../img/userinterface_mvp.jpg">
+
 ## Tauri (after installing Rust + Tauri CLI)
 ```bash
 npm run tauri dev
