@@ -1,6 +1,8 @@
 # 🎹 ChordGeefNie
 
 **ChordGeefNie** is een **deterministische akkoordprogressie-engine** die **MIDI** genereert voor DAW’s.  
+<img src="./img/midi_track_in_DAW_LogicPro.jpg">
+
 Het project is opgezet als een **spec-gedreven Proof of Concept** met een duidelijke route naar:
 
 - een lokale desktop app (React + Tauri/Electron)
@@ -170,9 +172,6 @@ python chordgeefniet.py --key C --scale minor --bars 8 --seed 123 --json
 Laat zien:
     •	JSON contract
     •	geschikt voor web/frontend gebruik
-
-## Screenshot 3 – Midi imported in een DAW
-<img src="./img/midi_track_in_DAW_LogicPro.jpg">
 
 ⸻
 
