@@ -182,7 +182,7 @@ Laat zien:
     •	geschikt voor web/frontend gebruik
 
 ## Screenshot 3 – Midi imported in een DAW
-<img src="./img/midi_traack_in_DAW_LogicPro.jpg">
+<img src="./img/midi_track_in_DAW_LogicPro.jpg">
 
 ⸻
 
