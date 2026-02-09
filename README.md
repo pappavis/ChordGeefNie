@@ -160,9 +160,9 @@ muzikale output moet reproduceerbaar zijn.
 ## Screenshot 1 – CLI output
 
 Command:
-'''bash
+```bash
 python chordgeefniet.py --key C --scale minor --bars 8 --seed 123
-'''
+```
 
 Laat zien:
     •	versie-banner
@@ -273,19 +273,13 @@ MIT License — vrij te gebruiken, ook commercieel.
 
 ⸻
 
+<img src="./img/midi_track_instrument.jpg" width="40%" height="40%">
+
+⸻
+
+
 ⚠️ Disclaimer
 
 ChordGeefNie is een hulpmiddel, geen vervanging van muzikale keuzes.
 Gebruik het als startpunt, niet als eindpunt.
 
----
-
-### Wat kan ik nu nog voor je doen?
-Logische vervolgstappen:
-
-1. **README inkorten tot “LinkedIn-proof” versie**
-2. **Eén pagina `ARCHITECTURE.md` maken**
-3. **Web MVP repo-structuur genereren**
-4. **JUCE plugin skeleton uitschrijven**
-
-Zeg maar — je zit nu in de fase waarin dit *echt* indruk maakt.
