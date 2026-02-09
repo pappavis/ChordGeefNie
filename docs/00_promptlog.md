@@ -2512,3 +2512,389 @@ Kies één:
 3. Begin Web MVP. (React + Tauri/Electron + JSON contract + packaging plan).
 4. Begin JUCE port-plan” (AU/VST3 mapping + param layout + scheduling).
 
+Hier is het hele pakket, in de volgorde die jij vraagt.
+
+⸻
+
+1) Git commands: repo aanmaken op GitHub + lokale map syncen
+
+Optie A — met GitHub CLI (aanrader)
+
+Voorwaarde: gh geïnstalleerd en ingelogd (gh auth login).
+
+# ga naar je lokale projectmap (root van chordgeefnie)
+cd /pad/naar/chordgeefnie
+
+git init
+git add .
+git commit -m "Initial commit: ChordGeefNie MVP"
+
+# GitHub repo maken + remote koppelen + push
+gh repo create ChordGeefNie --public --source=. --remote=origin --push
+
+Wil je ‘m privé:
+
+gh repo create ChordGeefNie --private --source=. --remote=origin --push
+
+Optie B — zonder GitHub CLI (via web + remote toevoegen)
+	1.	Maak repo aan op GitHub website (naam: ChordGeefNie)
+	2.	Daarna lokaal:
+
+cd /pad/naar/chordgeefnie
+
+git init
+git add .
+git commit -m "Initial commit: ChordGeefNie MVP"
+
+git branch -M main
+git remote add origin git@github.com:<JOUW_GITHUB_USER>/ChordGeefNie.git
+git push -u origin main
+
+Gebruik HTTPS remote als je geen SSH gebruikt:
+
+git remote add origin https://github.com/<JOUW_GITHUB_USER>/ChordGeefNie.git
+git push -u origin main
+
+
+⸻
+
+2) Publiceer v0.2.0 (tag + release discipline)
+
+Wat je concreet doet:
+	•	Zet chordgeefniet.py op v0.2.0 (dus vervang/rename jouw file)
+	•	Update changelog
+	•	Tag en push
+
+Commands:
+
+# in repo root
+cp chordgeefniet_v0_2_0.py chordgeefniet.py
+
+git add chordgeefniet.py CHANGELOG.md docs/
+git commit -m "Release v0.2.0: cadence variants, sevenths toggle, voicing/inversions, determinism selftest"
+
+git tag -a v0.2.0 -m "ChordGeefNie v0.2.0"
+git push origin main --tags
+
+(Als je GitHub Releases gebruikt: maak een Release aan op GitHub met tag v0.2.0 en plak highlights uit CHANGELOG.)
+
+⸻
+
+3) Code diff v0.1.0 → v0.2.0 expliciet (mens-leesbaar)
+
+Nieuwe CLI flags
+	•	--sevenths
+	•	--cadence plagal|half
+	•	--voicing close|open
+	•	--inversion root|random|smooth
+	•	--selftest
+	•	--dump-midi-events <path.json>
+
+Nieuwe config keys
+	•	SEVENTH_CHORDS_ENABLED
+	•	VOICING_SPREAD
+	•	INVERSION_MODE
+	•	DUMP_MIDI_EVENTS_JSON
+	•	SELFTEST
+
+HarmonyEngine wijzigingen
+	•	Cadence enforcement uitgebreid:
+	•	plagal: IV→I / iv→i in laatste 2 bars
+	•	half: eindigt op V in laatste bar
+	•	Seventh chords toggle:
+	•	diatonische sevenths alleen wanneer SEVENTH_CHORDS_ENABLED=true
+	•	Determinisme blijft seed-driven
+
+MidiExporter wijzigingen
+	•	Voicing/inversions toegepast vóór scheduling:
+	•	close/open spread
+	•	inversions: root/random/smooth (smooth = minimal movement vs vorige chord)
+	•	Event-dump JSON (determinisme-testbaar)
+
+Tests toegevoegd
+	•	DeterminismTester:
+	•	progression JSON equality
+	•	MIDI event dump equality
+	•	MIDI file SHA-256 equality (vereist mido)
+	•	CLI entry: --selftest
+
+(Als je ook een echte git diff wilt genereren: maak tags v0.1.0 en v0.2.0, dan: git diff v0.1.0..v0.2.0.)
+
+⸻
+
+4) Begin Web MVP (React + Tauri/Electron + JSON contract + packaging plan)
+
+4.1 Aanbevolen keuze
+	•	Tauri als je licht + strak wilt.
+	•	Electron als je “ik wil nu meteen overal werken zonder gedoe” wilt.
+
+Ik zou hier Tauri pakken (sneller, kleiner).
+
+4.2 JSON contract (frontend ↔ engine)
+
+Frontend roept lokaal:
+
+python chordgeefniet.py --json --key C --scale minor --bars 8 --seed 123 \
+  --cadence plagal --sevenths --voicing open --inversion smooth
+
+Frontend verwacht:
+	•	meta.banner, meta.app_version
+	•	config (echo)
+	•	progression.chords[].symbol en notes[]
+
+Error contract:
+	•	exit code != 0 ⇒ stderr tonen
+
+4.3 Packaging plan
+
+Fase A (dev MVP):
+	•	Vereist lokale Python + script in app folder
+	•	Tauri spawnt python process
+
+Fase B (distributie):
+	•	Maak standalone binary van engine:
+	•	PyInstaller: chordgeefniet / chordgeefniet.exe
+	•	Tauri bundelt binary per OS
+	•	Frontend roept binary aan i.p.v. python
+
+4.4 Minimale UI schermen
+	1.	Generator form (key/scale/bars/seed/cadence/sevenths/voicing/inversion)
+	2.	Results (chords, copy-to-clipboard)
+	3.	Export (MIDI export pad + run)
+	4.	Presets (save/load/list)
+
+⸻
+
+5) Begin JUCE port-plan (AU/VST3 mapping + params + scheduling)
+
+Belangrijke realiteit: Logic gebruikt AU, niet VST3.
+Met JUCE bouw je AU + VST3 uit dezelfde codebase.
+
+5.1 Plugin type
+	•	MIDI FX plugin (geen audio)
+	•	Output: MIDI events (note_on/note_off)
+	•	Host: tempo/transport (optioneel)
+
+5.2 Parameter layout (1:1 met config)
+
+Expose als JUCE params:
+	•	Key (0–11)
+	•	Scale (major/minor)
+	•	Bars (2/4/8/16)
+	•	Seed (int + “Random” toggle)
+	•	Cadence style (none/soft/strong/plagal/half)
+	•	Sevenths toggle
+	•	Voicing spread (close/open)
+	•	Inversion mode (root/random/smooth)
+	•	Note length beats
+	•	Playback mode + arp spread
+	•	Velocity mode + fixed/min/max/humanize
+	•	MIDI channel
+
+5.3 Scheduling in processBlock
+	•	Lees host position info (PPQ position, BPM)
+	•	Op bar boundaries schedule events in MidiBuffer
+	•	“Generate” knop: progressie cachen in plugin state
+	•	Smooth inversions: track vorige voicing in state
+
+5.4 Engine hergebruik strategie
+	•	Python engine is perfect voor MVP/web.
+	•	Voor plugin: C++ port (aanrader) i.p.v. Python embed/subprocess (macOS signing/sandbox ellende).
+
+⸻
+
+Wat is je gewenste route van hier?
+
+Kies één, dan werk ik ‘m meteen uit naar concrete files/commands:
+
+A) “Maak een publish checklist + update CHANGELOG/README snippets voor v0.2.0.”
+B) “Geef me het exacte git diff commando-pad + tagging stappen voor v0.1.0 en v0.2.0.”
+C) “Werk Web MVP uit als repo structuur + scripts + JSON schema.”
+D) “Werk JUCE port-plan uit als docs/JUCE_PLUGIN_MAPPING.md + parameter table + pseudo-code scheduling.”
+
+
+Hier is een concept README.md voor de ChordGeefNie GitHub-repo.
+Geschreven als technisch, eerlijk, demo-gericht — geen marketingfluff, wel meteen duidelijk wat het is, wat het niet is en waarom het interessant is.
+
+Je kunt dit 1-op-1 kopiëren naar README.md.
+
+⸻
+
+
+# 🎹 ChordGeefNie
+
+**ChordGeefNie** is een **deterministische akkoordprogressie-engine** die MIDI genereert voor DAW’s.  
+Het project is opgezet als een **spec-gedreven Proof of Concept (MVP)** met een helder groeipad naar:
+
+- een lokale desktop app (React + Tauri/Electron)
+- en een MIDI-FX plugin (AU / VST3 via JUCE)
+
+Alles werkt **offline**, **OS-onafhankelijk** en **reproduceerbaar**.
+
+> Geen magie, geen hype. Gewoon: akkoordprogressies → MIDI → muziek.
+
+---
+
+## ✨ Wat doet ChordGeefNie?
+
+- Genereert akkoordprogressies (major / minor)
+- Volledig **deterministisch** via seed
+- Exporteert **MIDI** met:
+  - instelbare PPQ (ticks per beat)
+  - tempo meta-event
+  - simultaan of arpeggio playback
+  - velocity modes (fixed / range / humanize)
+  - instelbare MIDI channel
+- Ondersteunt:
+  - cadence varianten (soft / strong / plagal / half)
+  - diatonische seventh chords (toggle)
+  - voicing spread (close / open)
+  - inversies (root / random / smooth)
+- Presets opslaan & laden (JSON)
+- CLI + library-bruikbaar
+- Volledig **offline**
+
+---
+
+## ❌ Wat doet het expliciet niet?
+
+- Geen audio synthese
+- Geen genre-voorspelling
+- Geen “AI schrijft een hit”
+- Geen cloud / telemetry
+- Geen non-diatonische harmonie (MVP)
+
+---
+
+## 📦 Projectstatus
+
+- **Versie:** v0.2.0
+- **Status:** Werkende MVP / Proof of Concept
+- **Architectuur:** single-file (`chordgeefniet.py`)
+- **Ontwikkelmodel:** AI-first, spec-gedreven
+
+---
+
+## 📁 Repository structuur
+
+chordgeefnie/
+├── chordgeefniet.py          # Engine + CLI (MVP)
+├── README.md
+├── CHANGELOG.md
+├── LICENSE
+└── docs/
+├── FS-ChordGeefNie-v0.2-Extended-B.md
+└── TS-ChordGeefNie-v0.2.md
+
+---
+
+## 🚀 Quick start
+
+### Vereisten
+- Python 3.10+
+- Voor MIDI export:  
+  ```bash
+  pip install mido
+
+Basisgebruik
+
+python chordgeefniet.py --key C --scale minor --bars 8
+
+Deterministisch (reproduceerbaar)
+
+python chordgeefniet.py --key C --scale minor --bars 8 --seed 123
+
+JSON output (voor web / integratie)
+
+python chordgeefniet.py --key C --scale minor --bars 8 --seed 123 --json
+
+MIDI export
+
+python chordgeefniet.py --key C --scale minor --bars 8 --seed 123 \
+  --export-midi --midi-out output.mid
+
+Cadence + sevenths + voicing
+
+python chordgeefniet.py --key C --scale minor --bars 8 --seed 123 \
+  --cadence plagal --sevenths --voicing open --inversion smooth
+
+
+⸻
+
+🧪 Determinisme & tests
+
+ChordGeefNie is testbaar deterministisch.
+
+pip install mido
+python chordgeefniet.py --selftest
+
+Tests controleren:
+	•	identieke progressies bij gelijke seed
+	•	identieke MIDI events
+	•	identieke .mid file hash (SHA-256)
+
+⸻
+
+💾 Presets
+
+# Opslaan
+python chordgeefniet.py --preset-save demo-seed-123
+
+# Laden
+python chordgeefniet.py --preset-load demo-seed-123
+
+# Lijst
+python chordgeefniet.py --preset-list
+
+Presets bevatten:
+	•	config snapshot
+	•	gegenereerde progression
+	•	versie-informatie (rollback-vriendelijk)
+
+⸻
+
+🧠 Ontwikkelfilosofie
+
+Dit project volgt een strikt spec-gedreven aanpak:
+	1.	Functionele specificaties (FS)
+	2.	Technische specificaties (TS)
+	3.	Codegeneratie
+	4.	Werkende demo
+
+Geen code zonder goedgekeurde specs.
+Geen “AI doet maar wat”.
+
+⸻
+
+🗺️ Roadmap (high level)
+	•	CLI MVP (v0.1.0)
+	•	Determinisme, cadence varianten, voicing (v0.2.0)
+	•	Web MVP (React + Tauri/Electron)
+	•	Standalone binary (zonder Python dependency)
+	•	JUCE port (AU / VST3 MIDI FX)
+	•	UI-gedreven preset management
+
+⸻
+
+📜 Licentie
+
+MIT License — vrij te gebruiken, ook commercieel.
+
+⸻
+
+⚠️ Disclaimer
+
+ChordGeefNie is bedoeld als hulpmiddel, geen vervanging van muzikale keuzes.
+Gebruik het als startpunt, niet als eindpunt.
+
+---
+
+### Volgende logische stappen (kies)
+Als je wilt, kan ik nu meteen:
+
+1. **README aanscherpen voor publiek vs intern** (bijv. recruiter-proof)
+2. **Screenshots / demo-GIF script uitschrijven**
+3. **Web MVP README-sectie toevoegen**
+4. **Plugin-gerichte README (JUCE/AU/VST3) maken**
+
+Zeg maar wat je volgende move is.
