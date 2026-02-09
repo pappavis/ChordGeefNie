@@ -2721,6 +2721,23 @@ Je kunt dit 1-op-1 kopiëren naar README.md.
 
 ⸻
 
+```bash
+(venv3.12) michiele@KodeklopperM4.local chordgeefniet % git add .                                                                                  17:49:17
+(venv3.12) michiele@KodeklopperM4.local chordgeefniet % git commit -m "Release v0.2.0: cadence variants, sevenths toggle, voicing/inversions, determinism selftest"
+[master fae4ba5] Release v0.2.0: cadence variants, sevenths toggle, voicing/inversions, determinism selftest
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+(venv3.12) michiele@KodeklopperM4.local chordgeefniet % git push                                                                                   17:50:21
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 414 bytes | 414.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/pappavis/ChordGeefNie.git
+   c120d58..fae4ba5  master -> master
+(venv3.12) michiele@KodeklopperM4.local chordgeefniet %                                                                                            17:50:23
+```
 
 # 🎹 ChordGeefNie
 
