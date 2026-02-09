@@ -153,9 +153,9 @@ muzikale output moet reproduceerbaar zijn.
 Screenshot 1 – CLI output
 
 Command:
-```bash
+'''bash
 python chordgeefniet.py --key C --scale minor --bars 8 --seed 123
-```
+'''
 
 Laat zien:
     •	versie-banner
