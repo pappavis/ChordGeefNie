@@ -5,6 +5,7 @@ Hoi ChatGPT, ben je bekend met de MIDI VST genaamd ChordGeni https://unison.audi
 Hier is wat concrete info over **Chord Genie** (ook bekend als *Unison Chord Genie*), inclusief wat het precies doet, hoe het werkt en voor wie het bedoeld is — straight to the point:
 
 ---
+<img src="./img/midi_track_in_DAW_LogicPro.jpg">
 
 ## 🧞‍♂️ Wat is **Chord Genie**?
 
