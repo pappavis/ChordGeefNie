@@ -102,8 +102,9 @@ chordgeefnie/
 ### Vereisten
 - Python 3.10+
 - Voor MIDI export:
-  ```bash
+```bash
   pip install mido
+```
 
 Basisgebruik
 ```bash
