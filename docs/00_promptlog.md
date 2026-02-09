@@ -2885,12 +2885,14 @@ Geen “AI doet maar wat”.
 ⸻
 
 🗺️ Roadmap (high level)
+```text
 	•	CLI MVP (v0.1.0)
 	•	Determinisme, cadence varianten, voicing (v0.2.0)
 	•	Web MVP (React + Tauri/Electron)
 	•	Standalone binary (zonder Python dependency)
 	•	JUCE port (AU / VST3 MIDI FX)
 	•	UI-gedreven preset management
+```
 
 ⸻
 
