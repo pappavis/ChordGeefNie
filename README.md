@@ -143,6 +143,13 @@ De tests controleren:
     •	identieke MIDI events
     •	identieke .mid file hash (SHA-256)
 
+```bash
+(venv3.12) michiele@KodeklopperM4.local chordgeefniet % python ./src/chordgeefniet.py --selftest                                                   16:53:30
+PASS: Progression determinism (same seed)
+PASS: MIDI event determinism (same seed)
+PASS: MIDI file hash determinism (SHA-256)
+```
+
 Dit is een bewuste designkeuze:
 muzikale output moet reproduceerbaar zijn.
 
