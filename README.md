@@ -1,13 +1,3 @@
-Top. Hieronder krijg je één samenhangende, aangescherpte README-variant met duidelijk gescheiden publieks- vs interne lagen, plus concrete scripts voor screenshots/demo-GIFs, én uitgebreide secties voor Web MVP en Plugin (JUCE/AU/VST3).
-
-Je kunt dit letterlijk kopiëren naar README.md.
-De structuur is zo opgezet dat:
-    •	een recruiter / externe lezer na ~60 seconden begrijpt wat dit is en waarom het interessant is
-    •	een technische lezer meteen ziet: dit is serieus, reproduceerbaar, en architecturaal doordacht
-
-⸻
-
-
 # 🎹 ChordGeefNie
 
 **ChordGeefNie** is een **deterministische akkoordprogressie-engine** die **MIDI** genereert voor DAW’s.  
