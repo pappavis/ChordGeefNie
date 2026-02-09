@@ -210,4 +210,4 @@ git push
 ```
 
 ## 🧩 Architecture Overview
-![ChordGeefNie Architecture](../img/architectuur_technisch.jpg)
+<img src="../img/architectuur_technisch.jpg" width="70%" height="70%">
