@@ -42,6 +42,7 @@ Dit is geen tutorial-project, maar een **engine-first product-prototype**.
   - reproduceerbaar
   - testbaar
 
+<img src="../img/architectuur_technisch.jpg">
 ---
 
 ## ✨ Wat doet ChordGeefNie?
