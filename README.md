@@ -114,20 +114,20 @@ python chordgeefniet.py --key C --scale minor --bars 8
 
 
 Deterministisch (reproduceerbaar)
-```
-python chordgeefniet.py --key C --scale minor --bars 8 --seed 123
 ```bash
+python chordgeefniet.py --key C --scale minor --bars 8 --seed 123
+```
 
 JSON output (voor web / integratie)
-```
-python chordgeefniet.py --key C --scale minor --bars 8 --seed 123 --json
 ```bash
+python chordgeefniet.py --key C --scale minor --bars 8 --seed 123 --json
+```
 
 MIDI export
-```
+```bash
 python chordgeefniet.py --key C --scale minor --bars 8 --seed 123 \
   --export-midi --midi-out output.mid
-```bash
+```
 
 
 ⸻
