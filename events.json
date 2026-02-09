@@ -1,0 +1,338 @@
+[
+  {
+    "abs_tick": 0,
+    "type": "note_on",
+    "note": 50,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 0,
+    "type": "note_on",
+    "note": 53,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 0,
+    "type": "note_on",
+    "note": 56,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 1920,
+    "type": "note_off",
+    "note": 50,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 1920,
+    "type": "note_off",
+    "note": 53,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 1920,
+    "type": "note_off",
+    "note": 56,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 1920,
+    "type": "note_on",
+    "note": 51,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 1920,
+    "type": "note_on",
+    "note": 55,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 1920,
+    "type": "note_on",
+    "note": 58,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 3840,
+    "type": "note_off",
+    "note": 51,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 3840,
+    "type": "note_off",
+    "note": 55,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 3840,
+    "type": "note_off",
+    "note": 58,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 3840,
+    "type": "note_on",
+    "note": 50,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 3840,
+    "type": "note_on",
+    "note": 53,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 3840,
+    "type": "note_on",
+    "note": 56,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 5760,
+    "type": "note_off",
+    "note": 50,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 5760,
+    "type": "note_off",
+    "note": 53,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 5760,
+    "type": "note_off",
+    "note": 56,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 5760,
+    "type": "note_on",
+    "note": 55,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 5760,
+    "type": "note_on",
+    "note": 58,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 5760,
+    "type": "note_on",
+    "note": 62,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 7680,
+    "type": "note_off",
+    "note": 55,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 7680,
+    "type": "note_off",
+    "note": 58,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 7680,
+    "type": "note_off",
+    "note": 62,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 7680,
+    "type": "note_on",
+    "note": 48,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 7680,
+    "type": "note_on",
+    "note": 51,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 7680,
+    "type": "note_on",
+    "note": 55,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 9600,
+    "type": "note_off",
+    "note": 48,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 9600,
+    "type": "note_off",
+    "note": 51,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 9600,
+    "type": "note_off",
+    "note": 55,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 9600,
+    "type": "note_on",
+    "note": 53,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 9600,
+    "type": "note_on",
+    "note": 56,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 9600,
+    "type": "note_on",
+    "note": 60,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 11520,
+    "type": "note_off",
+    "note": 53,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 11520,
+    "type": "note_off",
+    "note": 56,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 11520,
+    "type": "note_off",
+    "note": 60,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 11520,
+    "type": "note_on",
+    "note": 48,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 11520,
+    "type": "note_on",
+    "note": 51,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 11520,
+    "type": "note_on",
+    "note": 55,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 13440,
+    "type": "note_off",
+    "note": 48,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 13440,
+    "type": "note_off",
+    "note": 51,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 13440,
+    "type": "note_off",
+    "note": 55,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 13440,
+    "type": "note_on",
+    "note": 48,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 13440,
+    "type": "note_on",
+    "note": 51,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 13440,
+    "type": "note_on",
+    "note": 55,
+    "velocity": 90,
+    "channel": 0
+  },
+  {
+    "abs_tick": 15360,
+    "type": "note_off",
+    "note": 48,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 15360,
+    "type": "note_off",
+    "note": 51,
+    "velocity": 0,
+    "channel": 0
+  },
+  {
+    "abs_tick": 15360,
+    "type": "note_off",
+    "note": 55,
+    "velocity": 0,
+    "channel": 0
+  }
+]

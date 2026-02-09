@@ -1,0 +1,140 @@
+{
+  "preset_version": "0.1.0",
+  "saved_utc": "2026-02-09T13:55:45Z",
+  "app_version": "0.1.0",
+  "fs_version": "FS-ChordGeefNie-v0.2 (Extended-A)",
+  "ts_version": "TS-ChordGeefNie-v0.1 (Harmony + MIDI)",
+  "config": {
+    "APP_VERSION": "0.1.0",
+    "FS_VERSION": "FS-ChordGeefNie-v0.2 (Extended-A)",
+    "TS_VERSION": "TS-ChordGeefNie-v0.1 (Harmony + MIDI)",
+    "SEED": 123,
+    "KEY": "C",
+    "SCALE": "minor",
+    "BARS": 8,
+    "TIME_SIGNATURE": "4/4",
+    "TEMPO_BPM": 120,
+    "CHORD_COMPLEXITY": "triads",
+    "ALLOW_NON_DIATONIC": false,
+    "CADENCE_STYLE": "soft",
+    "MIDI_PPQ": 480,
+    "MIDI_CHANNEL": 1,
+    "MIDI_TRACKS": 1,
+    "NOTE_LENGTH_BEATS": 4.0,
+    "CHORD_PLAYBACK_MODE": "simultaneous",
+    "ARPEGGIO_SPREAD_BEATS": 0.25,
+    "VELOCITY_MODE": "fixed",
+    "VELOCITY_FIXED": 90,
+    "VELOCITY_MIN": 70,
+    "VELOCITY_MAX": 100,
+    "HUMANIZE_AMOUNT": 0.15,
+    "OUTPUT_FORMAT": "text",
+    "EXPORT_MIDI": false,
+    "MIDI_OUTPUT_PATH": "./output.mid",
+    "PRESET_DIR": "./presets"
+  },
+  "progression": {
+    "key": "C",
+    "scale": "minor",
+    "bars": 8,
+    "seed": 123,
+    "chords": [
+      {
+        "root": "D",
+        "quality": "dim",
+        "notes": [
+          "D",
+          "F",
+          "G#"
+        ],
+        "degree": 2,
+        "bar_index": 0,
+        "symbol": "Ddim"
+      },
+      {
+        "root": "D#",
+        "quality": "maj",
+        "notes": [
+          "D#",
+          "G",
+          "A#"
+        ],
+        "degree": 3,
+        "bar_index": 1,
+        "symbol": "D#"
+      },
+      {
+        "root": "D",
+        "quality": "dim",
+        "notes": [
+          "D",
+          "F",
+          "G#"
+        ],
+        "degree": 2,
+        "bar_index": 2,
+        "symbol": "Ddim"
+      },
+      {
+        "root": "G",
+        "quality": "min",
+        "notes": [
+          "G",
+          "A#",
+          "D"
+        ],
+        "degree": 5,
+        "bar_index": 3,
+        "symbol": "Gm"
+      },
+      {
+        "root": "C",
+        "quality": "min",
+        "notes": [
+          "C",
+          "D#",
+          "G"
+        ],
+        "degree": 1,
+        "bar_index": 4,
+        "symbol": "Cm"
+      },
+      {
+        "root": "F",
+        "quality": "min",
+        "notes": [
+          "F",
+          "G#",
+          "C"
+        ],
+        "degree": 4,
+        "bar_index": 5,
+        "symbol": "Fm"
+      },
+      {
+        "root": "C",
+        "quality": "min",
+        "notes": [
+          "C",
+          "D#",
+          "G"
+        ],
+        "degree": 1,
+        "bar_index": 6,
+        "symbol": "Cm"
+      },
+      {
+        "root": "C",
+        "quality": "min",
+        "notes": [
+          "C",
+          "D#",
+          "G"
+        ],
+        "degree": 1,
+        "bar_index": 7,
+        "symbol": "Cm"
+      }
+    ]
+  }
+}
