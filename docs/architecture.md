@@ -7,6 +7,7 @@ De kernlogica is volledig gescheiden van UI, web of plugin-integratie.
 
 <img src="../img/architectuur_technisch.jpg" width="40%" height="40%">
 
+```text
 [ CLI / Web / Plugin ]
 |
 v
@@ -20,6 +21,7 @@ v
 |
 v
 [ .mid file / MIDI events ]
+```
 
 ---
 
@@ -103,7 +105,7 @@ chordgeefnie-web/
 ├── engine/
 │   └── chordgeefniet        # python script of binary
 ├── package.json
-└── README.mdß
+└── README.md
 ```
 
 # Web–engine contract
@@ -198,78 +200,14 @@ Plaats in je repo:
 	•	docs/architecture.png
 
 Git commands:
-
+```bash
 mkdir -p docs
 cp /pad/naar/chordgeefnie_repo_docs_architecture.png docs/architecture.png
 
 git add docs/architecture.png README.md
 git commit -m "docs: add architecture infographic"
 git push
-
-En voeg in je README:
-
-## 🧩 Architecture Overview
-![ChordGeefNie Architecture](docs/architecture.png)
-
-
-⸻
-
-3) LinkedIn post schrijven (GIF + architectuur)
-
-Hier is een recruiter-proof post: kort, technisch, zonder hype.
-
-Post (copy/paste):
-
-Built a deterministic chord-progression → MIDI engine (offline).
-
-ChordGeefNie v0.2.0 generates diatonic progressions with:
-- seed-based determinism (same seed ⇒ same progression + same MIDI)
-- cadence variants (plagal / half / strong)
-- diatonic 7ths toggle
-- voicing spread + inversions (root/random/smooth)
-- MIDI export (PPQ, tempo, arpeggio/simultaneous, velocity models)
-
-Why I built it:
-I wanted a spec-driven prototype (FS → TS → code) that’s testable and portable:
-CLI today, React+Tauri desktop next, JUCE AU/VST3 MIDI FX later.
-
-Demo: short GIF (CLI → MIDI export → DAW import)
-Architecture: see diagram in repo.
-
-Repo: ChordGeefNie (MIT)
-
-GIF-script (30–45 sec)
-	1.	Terminal: run MIDI export
-	2.	Drag demo.mid into Logic (of Ableton)
-	3.	Play (toon simultaan vs arpeggio)
-
-Aanrader: maak 2 MIDI’s:
-	•	demo_simul.mid
-	•	demo_arp.mid
-
-⸻
-
-4) JUCE skeleton repo starten
-
-Download: chordgeefnie-juce-skeleton.zip￼
-
-Wat zit erin:
-	•	docs/JUCE_PLUGIN_MAPPING.md (parameter mapping + scheduling sketch)
-	•	Source/PluginProcessor.* en PluginEditor.* placeholders
-	•	README met targets (AU/VST3)
-
-Eerstvolgende stap in dit repo: kiezen Projucer vs CMake, daarna parameter layout in AudioProcessorValueTreeState.
-
-⸻
-
-Laatste chat-opties (wat wil je dat ik hierna concreet oplever?)
-
-Kies één, dan maak ik het meteen “push-ready”:
-	1.	Web MVP: Tauri command implementeren (spawn engine + return JSON + error handling)
-	2.	LinkedIn post finetunen op jouw toon + hashtags + “call to action”
-	3.	JUCE: echte C++ parameter table + processBlock pseudo-code met PPQ/sample offsets
-	4.	Alles integreren in één mono-repo (root + /web + /plugin + /engine)
-
+```
 
 ## 🧩 Architecture Overview
 ![ChordGeefNie Architecture](../img/architectuur_technisch.jpg)
