@@ -88,13 +88,13 @@ Dit is geen tutorial-project, maar een **engine-first product-prototype**.
 ## 📁 Repository structuur
 
 chordgeefnie/
-├── chordgeefniet.py
-├── README.md
-├── CHANGELOG.md
+├ ── chordgeefniet.py
+├ ── README.md
+├ ── CHANGELOG.md
 ├── LICENSE
-└── docs/
-├── FS-ChordGeefNie-v0.2-Extended-B.md
-└── TS-ChordGeefNie-v0.2.md
+└ ── docs/
+├ ── FS-ChordGeefNie-v0.2-Extended-B.md
+└ ── TS-ChordGeefNie-v0.2.md
 
 ---
 
