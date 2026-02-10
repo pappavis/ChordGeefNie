@@ -157,9 +157,11 @@ python chordgeefniet.py --key C --scale minor --bars 8 --seed 123
 ```
 
 Laat zien:
+```text
     •	versie-banner
     •	cadence / voicing instellingen
     •	gegenereerde progression
+```
 
 ⸻
 
@@ -170,14 +172,15 @@ python chordgeefniet.py --key C --scale minor --bars 8 --seed 123 --json
 ```
 
 Laat zien:
+```text
+Laat zien:
     •	JSON contract
     •	geschikt voor web/frontend gebruik
+```
 
 ⸻
 
-Demo-GIF – MIDI in DAW
-
-Script:
+## Demo-GIF – MIDI in DAW
     1.	Run MIDI export:
 
 ```bash
@@ -194,14 +197,15 @@ python chordgeefniet.py --key C --scale minor --bars 8 --seed 123 \
 
 ⸻
 
-🌐 Web MVP (React + Tauri/Electron)
-
+## 🌐 Web MVP (React + Tauri/Electron)
+```text
 Architectuur
     •	Frontend: React
     •	Runtime: Tauri (of Electron)
     •	Engine: lokale binary van ChordGeefNie
+```
 
-Contract
+### Contract
 
 Frontend roept lokaal:
 
@@ -218,11 +222,12 @@ Packaging
 
 ⸻
 
-🎛️ Plugin roadmap (JUCE – AU / VST3)
+# 🎛️ Plugin roadmap (JUCE – AU / VST3)
     •	Type: MIDI-FX plugin
     •	Doel: realtime MIDI output (geen audio)
     •	Host: Logic (AU), Ableton/Reaper (VST3)
 
+```text
 Parameters (1:1 met engine)
     •	Key / Scale
     •	Bars
@@ -235,15 +240,17 @@ Parameters (1:1 met engine)
     •	Playback mode
     •	Velocity model
     •	MIDI channel
+```
 
-Engine-strategie
+# Engine-strategie
+```text
     •	Python engine = reference implementation
     •	Plugin = C++ port van Harmony Engine
     •	Geen Python embedding in plugin (sandbox/signing issues)
-
+```
 ⸻
 
-🧠 Ontwikkelfilosofie
+# 🧠 Ontwikkelfilosofie
 
 Dit project volgt een strikt spec-gedreven aanpak:
     1.	Functionele specificaties (FS)
@@ -256,7 +263,7 @@ Geen onverklaarbare magie.
 
 ⸻
 
-📜 Licentie
+# 📜 Licentie
 
 MIT License — vrij te gebruiken, ook commercieel.
 
@@ -267,8 +274,11 @@ MIT License — vrij te gebruiken, ook commercieel.
 ⸻
 
 
-⚠️ Disclaimer
+# ⚠️ Disclaimer
 
 ChordGeefNie is een hulpmiddel, geen vervanging van muzikale keuzes.
 Gebruik het als startpunt, niet als eindpunt.
 
+# Credits
+ - Ontwerp design testing <i>Michiel Erasmus</i>
+ - Various youtubers  enz.
